@@ -1,20 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comunicados</title>
+  <title>Plataforma de Comunicados</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="site-header">
-      <h1>Plataforma para Comunicados</h1>
-      <p class="subtitle">Sistema realizado con la finalidad de gestionar, consultar y comunicar </p>
-    </header>
 
-    <main class="container">
-        <section class="panel" id="panel-carga" aria-labelledby="titulo-carga">
-          <h2 id="titulo-carga">Cargar Comunicado</h2>
-        </section>
-    </main>
+  <header class="site-header">
+    <h1>Plataforma de Comunicados</h1>
+    <p class="subtitle">Gestion y consulta de comunicados para el equipo de comunicacion</p>
+  </header>
+
+  <main class="container">
+    <!--Seccion para cargar el comunicado-->
+    <section class="panel">
+      <h2>Cargar comunicado</h2>
+
+        <form id="form-comunicado">
+
+          <div class="campo">
+            <label for="input-titulo">Título</label>
+            <input type="text" id="input-titulo" name="titulo" required>
+          </div>
+
+          <div class="campo">
+            <label for="input-fecha">Fecha</label>
+            <input type="date" id="input-fecha" name="fecha" required>
+          </div>
+
+          <div class="campo">
+            <label for="input-formato">Archivo del comunicado</label>
+            <input type="file" id="input-formato" name="formato" accept=".pdf,.xls,.xlsx,.doc,.docx" required >
+          </div>
+          <button type="submit" class="btn-primario">Agregar comunicado</button>
+        </form>
+    </section>
+
+    <!--seccion para consultar los comunicados-->
+    <section class="panel">
+      <h2>Consultar comunicados</h2>
+
+      <div class="controles">
+        <div class="campo">
+          <label for="input-buscar">Buscar por título</label>
+          <input type="text" id="input-buscar" placeholder="Escribe para filtrar...">
+        </div>
+
+        <div class="campo">
+          <label for="select-orden">Ordenar por fecha</label>
+            <select id="select-orden">
+            <option value="desc">Más reciente primero</option>
+            <option value="asc">Más antiguo primero</option>
+            </select>
+        </div>
+      </div>
+
+      <div id="lista-resultados" class="lista-resultados"></div>
+      <p id="mensaje-vacio" class="mensaje-vacio" hidden>No se encontraron comunicados con ese criterio.</p>
+    </section>
+
+  </main>
+
+  <script src="scripts/script.js"></script>
 </body>
 </html>
