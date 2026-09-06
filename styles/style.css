@@ -1,0 +1,236 @@
+:root {
+  --color-fondo: #f7f8fa;
+  --color-panel: #ffffff;
+  --color-borde: #e5e9ed;
+  --color-texto: #1f2937;
+  --color-texto-suave: #6b7280;
+  --color-primario: #2563eb;
+  --color-primario-oscuro: #1d4ed8;
+  --color-primario-suave: #eff6ff;
+
+  --color-pdf: #dc2626;
+  --color-pdf-suave: #fee2e2;
+  --color-excel: #16a34a;
+  --color-excel-suave: #dcfce7;
+  --color-word: #2563eb;
+  --color-word-suave: #dbeafe;
+
+  --radio: 10px;
+  --sombra: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --sombra-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --transicion: 0.15s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, Arial, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.5;
+}
+
+
+.site-header {
+  background: linear-gradient(135deg, var(--color-primario-oscuro), var(--color-primario));
+  color: white;
+  padding: 28px 32px;
+}
+
+.site-header h1 {
+  margin: 0 0 4px 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0;
+  color: #dbeafe;
+  font-size: 0.95rem;
+}
+
+.container {
+  display: flex;
+  gap: 24px;
+  padding: 28px 32px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.panel {
+  background-color: var(--color-panel);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 22px;
+  flex: 1 1 380px;
+  box-shadow: var(--sombra);
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-primario-suave);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 16px;
+}
+
+.campo label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-texto-suave);
+}
+
+.campo input,
+.campo select {
+  padding: 10px 12px;
+  border: 1.5px solid var(--color-borde);
+  border-radius: var(--radio);
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color var(--transicion), box-shadow var(--transicion);
+}
+
+.campo input:hover,
+.campo select:hover {
+  border-color: #c7d0d9;
+}
+
+.campo input:focus,
+.campo select:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px var(--color-primario-suave);
+}
+
+.ayuda {
+  color: var(--color-texto-suave);
+  font-size: 0.78rem;
+}
+
+.btn-primario {
+  background-color: var(--color-primario);
+  color: white;
+  border: none;
+  border-radius: var(--radio);
+  padding: 11px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transicion), transform var(--transicion);
+}
+
+.btn-primario:hover {
+  background-color: var(--color-primario-oscuro);
+}
+
+.btn-primario:active {
+  transform: scale(0.98);
+}
+
+.controles {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.controles .campo {
+  flex: 1 1 180px;
+  margin-bottom: 0;
+}
+
+.lista-resultados {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comunicado-card {
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  transition: box-shadow var(--transicion), transform var(--transicion);
+}
+
+.comunicado-card:hover {
+  box-shadow: var(--sombra-hover);
+  transform: translateY(-1px);
+}
+
+.comunicado-icono {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comunicado-info {
+  flex: 1 1 200px;
+}
+
+.comunicado-info h3 {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.comunicado-meta {
+  font-size: 0.82rem;
+  color: var(--color-texto-suave);
+}
+
+.badge-tipo {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.badge-pdf {
+  background-color: var(--color-pdf-suave);
+  color: var(--color-pdf);
+}
+
+.badge-excel {
+  background-color: var(--color-excel-suave);
+  color: var(--color-excel);
+}
+
+.badge-word {
+  background-color: var(--color-word-suave);
+  color: var(--color-word);
+}
+
+.mensaje-vacio {
+  color: var(--color-texto-suave);
+  font-style: italic;
+  text-align: center;
+  padding: 24px 0;
+}
+
+@media (max-width: 720px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .site-header {
+    padding: 20px;
+  }
+}
