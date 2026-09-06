@@ -19,13 +19,11 @@ export function renderizarLista(lista) {
     const card = document.createElement("div");
     card.className = "comunicado-card";
     card.innerHTML = `
-      <div class="comunicado-info">
+    <div class="comunicado-info">
         <h3>${comunicado.titulo}</h3>
-        <div class="comunicado-meta">
-          ${fechaLegible} · ${comunicado.archivo}
-        </div>
-      </div>
-      <span class="badge-tipo">${comunicado.tipo}</span>
+        <div class="comunicado-meta">${fechaLegible} · ${comunicado.archivo}</div>
+    </div>
+    <span class="badge-tipo">${comunicado.tipo}</span>
     `;
 
     listaResultados.appendChild(card);
