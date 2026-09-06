@@ -1,3 +1,4 @@
+/*variables de diseno*/
 :root {
   --color-fondo: #f7f8fa;
   --color-panel: #ffffff;
@@ -33,7 +34,7 @@ body {
   line-height: 1.5;
 }
 
-
+/*Encabezado*/
 .site-header {
   background: linear-gradient(135deg, var(--color-primario-oscuro), var(--color-primario));
   color: white;
@@ -51,7 +52,7 @@ body {
   color: #dbeafe;
   font-size: 0.95rem;
 }
-
+/*Panel principal*/
 .container {
   display: flex;
   gap: 24px;
@@ -77,7 +78,7 @@ body {
   padding-bottom: 12px;
   border-bottom: 2px solid var(--color-primario-suave);
 }
-
+/*Diseno del formulario*/
 .campo {
   display: flex;
   flex-direction: column;
@@ -137,7 +138,7 @@ body {
 .btn-primario:active {
   transform: scale(0.98);
 }
-
+/*Controles de consulta*/
 .controles {
   display: flex;
   gap: 16px;
@@ -150,6 +151,7 @@ body {
   margin-bottom: 0;
 }
 
+/*Lista de resultados*/
 .lista-resultados {
   display: flex;
   flex-direction: column;
@@ -193,7 +195,7 @@ body {
   font-size: 0.82rem;
   color: var(--color-texto-suave);
 }
-
+/*Badge por tipo de archivo*/
 .badge-tipo {
   font-size: 0.75rem;
   font-weight: 700;
@@ -223,7 +225,7 @@ body {
   text-align: center;
   padding: 24px 0;
 }
-
+/*Diseno responsive*/
 @media (max-width: 720px) {
   .container {
     flex-direction: column;
