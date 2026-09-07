@@ -1,6 +1,6 @@
 /*variables de diseno*/
 :root {
-  --color-fondo: #ffffff;
+  --color-fondo: #f5f5f7;
   --color-panel: #ffffff;
   --color-borde: #e8e8ed;
   --color-texto: #1d1d1f;
@@ -26,12 +26,20 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Arial, sans-serif;
   background-color: var(--color-fondo);
   color: var(--color-texto);
   line-height: 1.47;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
 }
 
 /*Encabezado*/
@@ -41,7 +49,8 @@ body {
   text-align: left;
   padding: 32px 32px 110px; 
   position: relative;   
-  overflow: hidden;    
+  overflow: hidden;
+  flex-shrink: 0;
 }
 .site-header::after {
   content: "";
@@ -49,7 +58,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 80px;
+  height: 45px; 
   background: linear-gradient(to bottom, transparent, var(--color-fondo));
   pointer-events: none;
 }
@@ -84,22 +93,28 @@ body {
 .container {
   display: flex;
   gap: 24px;
-  padding: 24px 32px 72px;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  padding: 16px 32px 24px;  
+  align-items: stretch;
+  flex-wrap: nowrap;  
+  flex: 1;
+  min-height: 0;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .panel {
-  background-color: #f5f5f7;
+  background-color: var(--color-panel);
   border: none;
   border-radius: var(--radio);
   padding: 28px;
   flex: 1 1 380px;
-  box-shadow: none;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
 }
-
 .panel h2 {
   margin-top: 0;
   font-size: 1.4rem;
@@ -187,9 +202,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-height: 420px;   
+  flex: 1;
   overflow-y: auto;     
-  padding-right: 4px;  
+  padding-right: 4px;
+  min-height: 0;
 }
 
 .comunicado-card {
@@ -275,22 +291,41 @@ body {
 /*Footer*/
 .site-footer {
   text-align: center;
-  padding: 32px 20px;
+  padding: 16px 20px;   
   color: var(--color-texto-suave);
   font-size: 0.82rem;
   border-top: 1px solid var(--color-borde);
-  margin-top: 24px;
+  margin-top: 0;   
+  flex-shrink: 0;
 }
 
 /*Diseno responsive*/
 @media (max-width: 720px) {
+  body {
+    display: block;
+    height: auto;
+    overflow: visible;
+  }
+
   .container {
     flex-direction: column;
     padding: 20px;
+    flex: none;
+  }
+
+  .lista-resultados {
+    flex: none;
+    max-height: 320px;
   }
 
   .site-header {
-    padding: 40px 20px 32px;
+    background: var(--color-primario);
+    color: white;
+    text-align: left;
+    padding: 28px 32px 60px;   /* cambiado: antes era 32px 32px 110px */
+    position: relative;   
+    overflow: hidden;
+    flex-shrink: 0;
   }
 }
 
