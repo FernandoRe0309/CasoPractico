@@ -34,6 +34,18 @@
             <label for="input-formato">Archivo del comunicado</label>
             <input type="file" id="input-formato" name="formato" accept=".pdf,.xls,.xlsx,.doc,.docx" required >
           </div>
+          <div class="campo">
+            <label for="input-area">Área de origen</label>
+            <select id="input-area" name="area" required>
+              <option value="" disabled selected>Selecciona un área</option>
+              <option value="Recursos Humanos">Recursos Humanos</option>
+              <option value="Finanzas">Finanzas</option>
+              <option value="Sistemas">IT</option>
+              <option value="Comunicación">Comunicación</option>
+              <option value="Operaciones">Operaciones</option>
+              <option value="Dirección General">Dirección General</option>
+            </select>
+          </div>
           <button type="submit" class="btn-primario">Agregar comunicado</button>
         </form>
     </section>
@@ -57,12 +69,17 @@
         </div>
       </div>
 
-      <div id="lista-resultados" class="lista-resultados"></div>
+      <p id="contador-resultados" class="contador"></p>
+      <div id="lista-resultados" class="lista-resultados">
+      
+        <div id="lista-resultados" class="lista-resultados"></div>
       <p id="mensaje-vacio" class="mensaje-vacio" hidden>No se encontraron comunicados con ese criterio.</p>
     </section>
 
   </main>
-
+  <footer class="site-footer">
+    <p>Plataforma de Comunicados · Proyecto demostrativo · 2026</p>
+  </footer>
   <script src="scripts/main.js" type="module"></script>
 </body>
 </html>
