@@ -9,6 +9,8 @@ const formComunicado = document.getElementById("form-comunicado");
 const inputTitulo = document.getElementById("input-titulo");
 const inputFecha = document.getElementById("input-fecha");
 const inputFormato = document.getElementById("input-formato");
+const toast = document.getElementById("toast-confirmacion");
+let toastTimeout;
 
 //Detecta el tipo de comunicación según la extensión del archivo
 function detectarTipoPorArchivo(nombreArchivo) {
@@ -38,4 +40,18 @@ formComunicado.addEventListener("submit", (evento) => {
 
   formComunicado.reset();
   aplicarFiltros();
+  mostrarConfirmacion(); 
 });
+
+function mostrarConfirmacion() {
+  toast.hidden = false;
+  // requestAnimationFrame asegura que el navegador "registre" el estado
+  // inicial antes de animar, si no, la transición no se ve
+  requestAnimationFrame(() => toast.classList.add("mostrar"));
+
+  clearTimeout(toastTimeout); // por si se agrega otro comunicado antes de que termine
+  toastTimeout = setTimeout(() => {
+    toast.classList.remove("mostrar");
+    setTimeout(() => { toast.hidden = true; }, 300);
+  }, 2500);
+}

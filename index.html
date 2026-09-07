@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plataforma de Comunicados</title>
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <header class="site-header">
-    <h1>Plataforma de Comunicados</h1>
-    <p class="subtitle">Gestion y consulta de comunicados para el equipo de comunicacion</p>
+    <div class="header-contenido">
+      <img src="resources/logo.png" alt="Logo" class="marca-icono">
+      <div class="header-textos">
+        <h1>Plataforma de Comunicados</h1>
+        <p class="subtitle">Equipo de Comunicación · Gestión y consulta de solicitudes</p>
+      </div>
+    </div>
   </header>
 
   <main class="container">
@@ -67,16 +74,31 @@
             <option value="asc">Más antiguo primero</option>
             </select>
         </div>
+        <div class="campo">
+          <label for="select-area">Filtrar por área</label>
+          <select id="select-area">
+            <option value="">Todas las áreas</option>
+            <option value="Recursos Humanos">Recursos Humanos</option>
+            <option value="Finanzas">Finanzas</option>
+            <option value="Sistemas">Sistemas</option>
+            <option value="Comunicación">Comunicación</option>
+            <option value="Operaciones">Operaciones</option>
+            <option value="Dirección General">Dirección General</option>
+          </select>
+        </div>
       </div>
 
       <p id="contador-resultados" class="contador"></p>
-      <div id="lista-resultados" class="lista-resultados">
-      
-        <div id="lista-resultados" class="lista-resultados"></div>
+
+      <div id="lista-resultados" class="lista-resultados"></div>
+
       <p id="mensaje-vacio" class="mensaje-vacio" hidden>No se encontraron comunicados con ese criterio.</p>
     </section>
 
   </main>
+
+  <div id="toast-confirmacion" class="toast" hidden>✓ Comunicado agregado</div>
+
   <footer class="site-footer">
     <p>Plataforma de Comunicados · Proyecto demostrativo · 2026</p>
   </footer>
