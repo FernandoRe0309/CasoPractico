@@ -301,11 +301,17 @@ body {
 
 /*Diseno responsive*/
 @media (max-width: 720px) {
-  body {
-    display: block;
-    height: auto;
-    overflow: visible;
-  }
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Arial, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.47;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: auto;
+}
 
   .container {
     flex-direction: column;
