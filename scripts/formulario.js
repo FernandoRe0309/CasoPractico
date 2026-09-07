@@ -10,6 +10,7 @@ const inputTitulo = document.getElementById("input-titulo");
 const inputFecha = document.getElementById("input-fecha");
 const inputFormato = document.getElementById("input-formato");
 const toast = document.getElementById("toast-confirmacion");
+const inputArea = document.getElementById("input-area"); 
 let toastTimeout;
 
 //Detecta el tipo de comunicación según la extensión del archivo
@@ -33,7 +34,8 @@ formComunicado.addEventListener("submit", (evento) => {
     titulo: inputTitulo.value.trim(),
     fecha: inputFecha.value,
     tipo: detectarTipoPorArchivo(nombreArchivo),
-    archivo: nombreArchivo
+    archivo: nombreArchivo,
+    area: inputArea.value 
   };
 
   comunicados.push(nuevoComunicado);
